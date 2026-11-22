@@ -1,5 +1,8 @@
 *.bak
 /target/
+node_modules/
+playwright-report/
+test-results/
 hs_err_*.log
 *.log
 

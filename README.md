@@ -82,3 +82,15 @@ __soatest(.sh\|.bat)__                 | Executes Parasoft SOAtest API and Web f
 set-vars.(.sh\|.bat): setup JTEST_HOME and SOATEST_HOME environment variable before running any script.
 all reports will be stored under target/report/<build ID> directory.
 on Windows, 7zip must be installed (default to C:\Program Files\7-zip) to run deploy-jtest-monitor.bat script.
+
+## Playwright
+Install the JavaScript test dependencies and all Playwright browsers:
+
+```shell
+npm install
+npx playwright install
+```
+
+Start ParaBank, then run the end-to-end tests with `npm run test:e2e`. By default, tests use `http://localhost:8080/parabank`; set `PLAYWRIGHT_BASE_URL` to override it. The suite is configured for Chromium, Firefox, and WebKit. Use `npm run test:e2e:ui` to run Playwright's interactive test UI.
+
+VS Code's workspace MCP configuration is in `.vscode/mcp.json`. Reload the MCP server in VS Code after installing dependencies to use Playwright browser tools.
